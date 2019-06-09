@@ -1,0 +1,171 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Sbeam</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+<style>
+
+#head{
+	height:150px;
+	width:auto;
+	background-color: #0CF;
+	}
+#body{
+	height:auto;
+	width:auto;
+	background-image:url(ch06-1-1.jpg);
+	background-repeat:repeat-x;
+	}
+#broad{
+	background-image:url(ch06-1.jpg);
+	background-position:center;
+	background-repeat:no-repeat;
+	height:316px;
+	width:800px;
+	border-style:double;
+	border-color:#006;
+	margin:5px;
+	padding:40px;
+	background-color: #FCF;
+	}
+#text{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	background-color:white;
+	border-style:solid;
+	border:thin;
+	padding:20px;
+	border-radius:25px;
+	opacity:0.7;
+	}
+#title{
+	font-size:50px;
+	padding:50px;
+	font-family:Arial, Helvetica, sans-serif;
+	}
+#login{
+	padding:20px;
+	border:thin;
+	float:right;
+	width:auto;
+	margin:5px;
+	border-style: solid;
+	border-color:#63C;
+	background-color: #D0A8EC;
+	}
+#submitbtn{
+	-webkit-transition:background-color 0.5s;
+	-o-transition:background-color 0.5s;
+	-moz-transition:background-color 0.5s;
+	}
+#submitbtn:hover{
+	background-color: #09C;
+	}
+#footer{
+	background-color:black;
+	width:auto;
+	height:auto;
+	text-align:center;
+	opacity:0.8;
+	}	
+	
+
+@media screen and (max-width: 1200px) { 
+#text {width: auto;} 
+#broad {width: auto;} 
+#login {width: auto;}
+} 
+/* 设置了浏览器宽度不大于1200px时 abc 显示900px宽度 */ 
+
+@media screen and (max-width: 900px) { 
+#text {width: auto;} 
+#broad {width: auto;} 
+#login {width: auto;}
+} 
+	
+	
+</style>
+<div id="head">
+    <div id="title">
+   		<p style="color:white;">Sbeam</p>
+    </div>
+</div><!--标题-->
+
+</head>
+
+<body onload="isload()" id="body">
+	<div class="container">
+	<div class="row clearfix">
+    
+		<div class="col-md-8 column"><!--左边-->
+        	
+        	<div id="broad">
+            <div id="text">
+            	<h1>欢迎来到Sbeam！</h1>
+                <p><br>双十一没剁手？没关系！现在买买买！<br>
+                什么？双十一剁手了？没关系！继续买买买！<br>
+                快去登录并开始购买吧！</p>
+                <p style="text-align:right">>></p>
+            </div>
+            </div>
+            
+		</div><!--左边-->
+        
+<script>
+function sendok()
+{
+	if (userid.value!="" && userpwd.value!="")
+	{
+		localStorage.userid=userid.value;
+		sessionStorage.userpwd=userpwd.value;
+		return ture;
+	}
+	else
+	{
+		alert("请输入账号");
+		return false;
+	}
+}
+
+function isload()
+{
+	if (localStorage.userid)
+		userid.value=localStorage.userid;
+}
+</script>
+        
+        
+        
+		<div id="login" class="col-md-4 column"><!--右边-->
+            <form role="form" method="post" action="ch06-2.html" onSubmit="return sendok();">
+                    <div class="form-group">
+                         <label for="exampleInputEmail1">用户名</label><input class="form-control" id="userid" />
+                    </div>
+                    <div class="form-group">
+                         <label for="exampleInputPassword1">密码</label><input class="form-control" id="userpwd" />
+                    </div>
+                    <div class="form-group">
+					 
+					<p class="help-block">
+						测试用户名和密码都为admin。
+					</p>
+					</div>	
+                    <button id="submitbtn" type="submit" class="btn btn-default" onclick:"background-color:blue">登录</button>
+            </form>
+		</div><!--右边-->
+        
+        
+	</div>
+</div>
+
+
+<footer id="footer">
+	<h4 style="color:white; font-family:Arial, Helvetica, sans-serif;">By 于佳妍 （不许抄我的作业）</h4>
+</footer>
+
+
+</body>
+</html>
